@@ -15,12 +15,9 @@ public class ResultConverter {
         } catch (SQLException e) {
             return new ArrayList<>();
         }
-
     }
 
-    private ResultConverter(){
-
-    }
+    private ResultConverter(){}
 
     private List<CountDetails> _convertAll(ResultSet set) throws SQLException {
         var counts = new ArrayList<CountDetails>();
@@ -38,5 +35,4 @@ public class ResultConverter {
         }};
         return count;
     }
-
 }

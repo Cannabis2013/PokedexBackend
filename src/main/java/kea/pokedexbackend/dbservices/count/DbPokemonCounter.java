@@ -12,8 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class DbPokemCounter extends ConnectionProvider implements IDbPokemonCounter {
-    public DbPokemCounter(IConnectionBuilder builder) {
+public class DbPokemonCounter extends ConnectionProvider implements IDbPokemonCounter {
+    public DbPokemonCounter(IConnectionBuilder builder) {
         super(builder);
     }
 
@@ -24,7 +24,8 @@ public class DbPokemCounter extends ConnectionProvider implements IDbPokemonCoun
                     .createStatement().executeQuery("""
                 SELECT COUNT(name) as count, primary_type as type  
                 from pokemon p 
-                GROUP BY primary_type;
+                GROUP BY primary_type
+                ORDER BY count DESC;
             """);
             return ResultConverter.ConvertAll(dbResult);
 

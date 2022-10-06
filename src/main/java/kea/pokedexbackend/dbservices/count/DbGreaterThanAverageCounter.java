@@ -19,7 +19,8 @@ public class DbGreaterThanAverageCounter extends ConnectionProvider implements I
         try {
             var dbResult = getConnection()
                     .createStatement().executeQuery("""
-                SELECT COUNT(*) AS count FROM pokemon p
+                SELECT COUNT(*) AS count 
+                FROM pokemon p
                 WHERE hp > (SELECT AVG(hp) FROM pokemon p);
             """);
             if(dbResult.next())
