@@ -1,7 +1,8 @@
-package kea.pokedexbackend.dbservices.pokemon;
+package kea.pokedexbackend.dbservices.CRUD.MySqlProvider.Fetcher;
 
-import kea.pokedexbackend.db.pokemon.get.IDbPokemonFetcher;
-import kea.pokedexbackend.models.pokemon.Pokemon;
+import kea.pokedexbackend.db.CRUD.get.IDbPokemonFetcher;
+import kea.pokedexbackend.dbservices.CRUD.MySqlProvider.Converter.ResultConverter;
+import kea.pokedexbackend.models.CRUD.pokemon.Pokemon;
 import kea.pokedexbackend.db.connectionbuilders.DbConnectionException;
 import kea.pokedexbackend.db.connectionbuilders.IConnectionBuilder;
 import org.springframework.stereotype.Service;

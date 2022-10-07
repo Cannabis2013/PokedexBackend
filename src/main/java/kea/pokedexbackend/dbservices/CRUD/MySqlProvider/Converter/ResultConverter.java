@@ -1,6 +1,6 @@
-package kea.pokedexbackend.dbservices.pokemon;
+package kea.pokedexbackend.dbservices.CRUD.MySqlProvider.Converter;
 
-import kea.pokedexbackend.models.pokemon.Pokemon;
+import kea.pokedexbackend.models.CRUD.pokemon.Pokemon;
 import org.springframework.stereotype.Service;
 import java.sql.ResultSet;
 import java.sql.SQLException;

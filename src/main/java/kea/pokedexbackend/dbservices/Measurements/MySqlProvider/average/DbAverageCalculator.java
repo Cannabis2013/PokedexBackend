@@ -1,4 +1,4 @@
-package kea.pokedexbackend.dbservices.average;
+package kea.pokedexbackend.dbservices.Measurements.MySqlProvider.average;
 
 import kea.pokedexbackend.db.connectionbuilders.ConnectionProvider;
 import kea.pokedexbackend.db.connectionbuilders.DbConnectionException;

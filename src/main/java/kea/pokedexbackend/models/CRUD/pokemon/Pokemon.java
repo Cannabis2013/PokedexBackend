@@ -1,4 +1,4 @@
-package kea.pokedexbackend.models.pokemon;
+package kea.pokedexbackend.models.CRUD.pokemon;
 
 public class Pokemon {
     public int pokedexNumber;

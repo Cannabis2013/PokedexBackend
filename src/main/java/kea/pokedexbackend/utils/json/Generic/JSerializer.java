@@ -1,17 +1,19 @@
-package kea.pokedexbackend.utils.json;
+package kea.pokedexbackend.utils.json.Generic;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import kea.pokedexbackend.models.CRUD.pokemon.Pokemon;
+
 import java.io.IOException;
 import java.io.StringWriter;
 
 public class JSerializer {
     public static  String serialize(Object obj){
-        var entities = obj;
-        var mapper = buildJsonMapper();
+        var mapper = getJsonMapper();
         var writer = new StringWriter();
         try {
-            mapper.writeValue(writer,entities);
+            mapper.writeValue(writer,obj);
         } catch (IOException e) {
             e.printStackTrace();
             return "";
@@ -20,7 +22,9 @@ public class JSerializer {
         return json;
     }
 
-    private static ObjectMapper buildJsonMapper(){
+
+
+    private static ObjectMapper getJsonMapper(){
         var mapper = new ObjectMapper();
         mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
         return mapper;

@@ -1,6 +1,6 @@
-package kea.pokedexbackend.dbservices.count;
+package kea.pokedexbackend.dbservices.Measurements.MySqlProvider.count;
 
-import kea.pokedexbackend.models.count.CountDetails;
+import kea.pokedexbackend.models.Measurements.count.CountDetails;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ResultConverter {
-    public static List<CountDetails> ConvertAll(ResultSet set){
+    public static List<CountDetails> Convert(ResultSet set){
         var converter = new ResultConverter();
         try {
             return converter._convertAll(set);

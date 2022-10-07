@@ -1,10 +1,10 @@
-package kea.pokedexbackend.dbservices.count;
+package kea.pokedexbackend.dbservices.Measurements.MySqlProvider.count;
 
 import kea.pokedexbackend.db.connectionbuilders.ConnectionProvider;
 import kea.pokedexbackend.db.connectionbuilders.DbConnectionException;
 import kea.pokedexbackend.db.connectionbuilders.IConnectionBuilder;
 import kea.pokedexbackend.db.measurements.count.IDbPokemonCounter;
-import kea.pokedexbackend.models.count.CountDetails;
+import kea.pokedexbackend.models.Measurements.count.CountDetails;
 import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
@@ -18,7 +18,7 @@ public class DbPokemonCounter extends ConnectionProvider implements IDbPokemonCo
     }
 
     @Override
-    public List<CountDetails> countPokemons() throws DbConnectionException {
+    public List<CountDetails> count() throws DbConnectionException {
         try {
             var dbResult = getConnection()
                     .createStatement().executeQuery("""
@@ -27,7 +27,7 @@ public class DbPokemonCounter extends ConnectionProvider implements IDbPokemonCo
                 GROUP BY primary_type
                 ORDER BY count DESC;
             """);
-            return ResultConverter.ConvertAll(dbResult);
+            return ResultConverter.Convert(dbResult);
 
         } catch (SQLException e){
             e.printStackTrace();

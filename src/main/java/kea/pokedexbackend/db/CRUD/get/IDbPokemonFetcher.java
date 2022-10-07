@@ -1,6 +1,6 @@
-package kea.pokedexbackend.db.pokemon.get;
+package kea.pokedexbackend.db.CRUD.get;
 
-import kea.pokedexbackend.models.pokemon.Pokemon;
+import kea.pokedexbackend.models.CRUD.pokemon.Pokemon;
 import kea.pokedexbackend.db.connectionbuilders.DbConnectionException;
 import java.util.List;
 
