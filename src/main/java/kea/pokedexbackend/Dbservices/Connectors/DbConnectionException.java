@@ -1,4 +1,4 @@
-package kea.pokedexbackend.Dbservices.MySql.Connectors;
+package kea.pokedexbackend.Dbservices.Connectors;
 
 public class DbConnectionException extends Exception{
     public DbConnectionException(Exception e){

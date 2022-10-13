@@ -1,4 +1,4 @@
-package kea.pokedexbackend.Dbservices.MySql.Connectors;
+package kea.pokedexbackend.Dbservices.Connectors;
 
 import kea.pokedexbackend.Db.Connector.IDbConnector;
 import org.springframework.core.env.Environment;

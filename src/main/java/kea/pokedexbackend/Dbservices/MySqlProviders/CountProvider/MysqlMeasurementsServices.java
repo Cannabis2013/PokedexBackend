@@ -1,4 +1,4 @@
-package kea.pokedexbackend.Dbservices.MySql.ServiceProviders.CountProvider;
+package kea.pokedexbackend.Dbservices.MySqlProviders.CountProvider;
 
 import kea.pokedexbackend.Controllers.Measurements.IPokemonMeasureServices;
 import kea.pokedexbackend.Db.Connector.IDbConnector;
@@ -7,11 +7,11 @@ import kea.pokedexbackend.Db.measurements.average.IDbAverageGrassHP;
 import kea.pokedexbackend.Db.measurements.average.IDbFastestAvgType;
 import kea.pokedexbackend.Db.measurements.count.IDbAboveAverageHP;
 import kea.pokedexbackend.Db.measurements.count.IDbPokemonCounter;
-import kea.pokedexbackend.Dbservices.MySql.ServiceProviders.CountProvider.average.MySqlAverageGrassHP;
-import kea.pokedexbackend.Dbservices.MySql.ServiceProviders.CountProvider.average.MySqlFastestPrimaryType;
-import kea.pokedexbackend.Dbservices.MySql.ServiceProviders.CountProvider.count.MySqlAboveAverageHP;
-import kea.pokedexbackend.Dbservices.MySql.ServiceProviders.CountProvider.count.MySqlPokemonCount;
-import kea.pokedexbackend.Dbservices.MySql.ServiceProviders.CountProvider.average.MySqlAverageDefence;
+import kea.pokedexbackend.Dbservices.MySqlProviders.CountProvider.average.MySqlAverageGrassHP;
+import kea.pokedexbackend.Dbservices.MySqlProviders.CountProvider.average.MySqlFastestPrimaryType;
+import kea.pokedexbackend.Dbservices.MySqlProviders.CountProvider.count.MySqlAboveAverageHP;
+import kea.pokedexbackend.Dbservices.MySqlProviders.CountProvider.count.MySqlPokemonCount;
+import kea.pokedexbackend.Dbservices.MySqlProviders.CountProvider.average.MySqlAverageDefence;
 import org.springframework.stereotype.Service;
 
 @Service

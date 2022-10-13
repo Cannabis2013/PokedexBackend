@@ -1,6 +1,6 @@
 package kea.pokedexbackend.Controllers.Measurements;
 
-import kea.pokedexbackend.Dbservices.MySql.Connectors.DbConnectionException;
+import kea.pokedexbackend.Dbservices.Connectors.DbConnectionException;
 import kea.pokedexbackend.models.Measurements.count.CountDetails;
 import kea.pokedexbackend.utils.json.Generic.JSerializer;
 import org.springframework.web.bind.annotation.CrossOrigin;

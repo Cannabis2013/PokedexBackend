@@ -1,6 +1,6 @@
 package kea.pokedexbackend.Controllers.CRUD;
 
-import kea.pokedexbackend.Dbservices.MySql.Connectors.DbConnectionException;
+import kea.pokedexbackend.Dbservices.Connectors.DbConnectionException;
 import kea.pokedexbackend.models.CRUD.pokemon.Pokemon;
 import kea.pokedexbackend.utils.json.Generic.JSerializer;
 import kea.pokedexbackend.utils.json.Pokemon.PokemonDeserializer;
@@ -16,7 +16,6 @@ public class PokemonCRUD {
     public PokemonCRUD(ICRUDServices services) {_services = services;}
 
     @GetMapping("/getAll")
-
     public String get(){
         List<Pokemon> pokemons;
         try {
@@ -49,7 +48,7 @@ public class PokemonCRUD {
         } catch (DbConnectionException e) {
             return e.getMessage();
         }
-        return result ? "Success" : "Fail";
+        return _services.resultResponse().response(result);
     }
 
     @PostMapping("removePokemon")
@@ -61,7 +60,7 @@ public class PokemonCRUD {
         } catch (DbConnectionException e) {
             return e.getMessage();
         }
-        return result ? "Success" : "Failed";
+        return _services.resultResponse().response(result);
     }
 
     @PatchMapping("UpdatePokemon")
@@ -70,7 +69,7 @@ public class PokemonCRUD {
         try {
             var removeResult = _services.remover().remove(pokemon);
             var result = removeResult ? _services.adder().Add(pokemon)  : false;
-            return result ? "Success" : "Failed";
+            return _services.resultResponse().response(result);
         } catch (Exception e){
             return e.getMessage();
         }

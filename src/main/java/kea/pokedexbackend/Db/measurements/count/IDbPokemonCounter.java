@@ -1,6 +1,6 @@
 package kea.pokedexbackend.Db.measurements.count;
 
-import kea.pokedexbackend.Dbservices.MySql.Connectors.DbConnectionException;
+import kea.pokedexbackend.Dbservices.Connectors.DbConnectionException;
 import kea.pokedexbackend.models.Measurements.count.CountDetails;
 
 import java.util.List;

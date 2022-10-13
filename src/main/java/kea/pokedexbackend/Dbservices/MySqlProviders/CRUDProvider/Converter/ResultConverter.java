@@ -1,4 +1,4 @@
-package kea.pokedexbackend.Dbservices.MySql.ServiceProviders.CRUDProvider.Converter;
+package kea.pokedexbackend.Dbservices.MySqlProviders.CRUDProvider.Converter;
 
 import kea.pokedexbackend.models.CRUD.pokemon.Pokemon;
 import org.springframework.stereotype.Service;

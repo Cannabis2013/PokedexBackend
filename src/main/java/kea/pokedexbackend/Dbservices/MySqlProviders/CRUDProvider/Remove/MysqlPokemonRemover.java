@@ -1,8 +1,8 @@
-package kea.pokedexbackend.Dbservices.MySql.ServiceProviders.CRUDProvider.Remove;
+package kea.pokedexbackend.Dbservices.MySqlProviders.CRUDProvider.Remove;
 
 import kea.pokedexbackend.Db.CRUD.Remove.IDbPokemonRemover;
 import kea.pokedexbackend.Db.Connector.IDbConnector;
-import kea.pokedexbackend.Dbservices.MySql.Connectors.DbConnectionException;
+import kea.pokedexbackend.Dbservices.Connectors.DbConnectionException;
 import kea.pokedexbackend.models.CRUD.pokemon.Pokemon;
 import org.springframework.stereotype.Service;
 import java.sql.ResultSet;

@@ -1,8 +1,8 @@
-package kea.pokedexbackend.Dbservices.MySql.ServiceProviders.CRUDProvider.Add;
+package kea.pokedexbackend.Dbservices.MySqlProviders.CRUDProvider.Add;
 
 import kea.pokedexbackend.Db.CRUD.Add.IDbPokemonAdder;
 import kea.pokedexbackend.Db.Connector.IDbConnector;
-import kea.pokedexbackend.Dbservices.MySql.Connectors.DbConnectionException;
+import kea.pokedexbackend.Dbservices.Connectors.DbConnectionException;
 import kea.pokedexbackend.models.CRUD.pokemon.Pokemon;
 import java.sql.SQLException;
 

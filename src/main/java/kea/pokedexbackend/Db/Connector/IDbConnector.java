@@ -1,6 +1,6 @@
 package kea.pokedexbackend.Db.Connector;
 
-import kea.pokedexbackend.Dbservices.MySql.Connectors.DbConnectionException;
+import kea.pokedexbackend.Dbservices.Connectors.DbConnectionException;
 
 import java.sql.Connection;
 

@@ -1,7 +1,7 @@
-package kea.pokedexbackend.Dbservices.MySql.ServiceProviders.CountProvider.count;
+package kea.pokedexbackend.Dbservices.MySqlProviders.CountProvider.count;
 
 import kea.pokedexbackend.Db.Connector.IDbConnector;
-import kea.pokedexbackend.Dbservices.MySql.Connectors.DbConnectionException;
+import kea.pokedexbackend.Dbservices.Connectors.DbConnectionException;
 import kea.pokedexbackend.Db.measurements.count.IDbPokemonCounter;
 import kea.pokedexbackend.models.Measurements.count.CountDetails;
 import org.springframework.stereotype.Service;

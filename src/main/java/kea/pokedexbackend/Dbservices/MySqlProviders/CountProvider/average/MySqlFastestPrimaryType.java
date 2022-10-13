@@ -1,7 +1,7 @@
-package kea.pokedexbackend.Dbservices.MySql.ServiceProviders.CountProvider.average;
+package kea.pokedexbackend.Dbservices.MySqlProviders.CountProvider.average;
 
 import kea.pokedexbackend.Db.Connector.IDbConnector;
-import kea.pokedexbackend.Dbservices.MySql.Connectors.DbConnectionException;
+import kea.pokedexbackend.Dbservices.Connectors.DbConnectionException;
 import kea.pokedexbackend.Db.measurements.average.IDbFastestAvgType;
 import org.springframework.stereotype.Service;
 import java.sql.SQLException;
