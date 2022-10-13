@@ -1,6 +1,7 @@
 package kea.pokedexbackend.Dbservices.Measurements.MySqlProvider;
 
 import kea.pokedexbackend.Controllers.Measurements.IPokemonMeasureServices;
+import kea.pokedexbackend.Db.Connector.IDbConnector;
 import kea.pokedexbackend.Db.measurements.average.IDbAverageDefence;
 import kea.pokedexbackend.Db.measurements.average.IDbAverageGrassHP;
 import kea.pokedexbackend.Db.measurements.average.IDbFastestAvgType;
@@ -15,12 +16,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MysqlMeasurementsServices implements IPokemonMeasureServices {
-    public MysqlMeasurementsServices() {
-        _pokemonCounter = new MySqlPokemonCount();
-        _avgDefCalculator = new MySqlAverageDefence();
-        _avgGrassHp = new MySqlAverageGrassHP();
-        _avgHPCounter = new MySqlAboveAverageHP();
-        _fastestPrimaryType = new MySqlFastestPrimaryType();
+    public MysqlMeasurementsServices(IDbConnector dbConnector) {
+        _pokemonCounter = new MySqlPokemonCount(dbConnector);
+        _avgDefCalculator = new MySqlAverageDefence(dbConnector);
+        _avgGrassHp = new MySqlAverageGrassHP(dbConnector);
+        _avgHPCounter = new MySqlAboveAverageHP(dbConnector);
+        _fastestPrimaryType = new MySqlFastestPrimaryType(dbConnector);
     }
 
     @Override

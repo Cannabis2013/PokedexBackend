@@ -1,19 +1,23 @@
 package kea.pokedexbackend.Dbservices.CRUD.MySqlProvider.Add;
 
 import kea.pokedexbackend.Db.CRUD.Add.IDbPokemonAdder;
-import kea.pokedexbackend.Dbservices.Connectionbuilders.MysqlConnection;
+import kea.pokedexbackend.Db.Connector.IDbConnector;
 import kea.pokedexbackend.Dbservices.Connectionbuilders.DbConnectionException;
 import kea.pokedexbackend.models.CRUD.pokemon.Pokemon;
 import java.sql.SQLException;
 
 public class MySqlPokemonAdder implements IDbPokemonAdder {
+    public MySqlPokemonAdder(IDbConnector dbConnector) {
+        _dbConnector = dbConnector;
+    }
+
     @Override
     public boolean Add(Pokemon pokemon) throws DbConnectionException {
         if(pokemon == null)
             return false;
         var query = toQuery(pokemon);
         try {
-            return !MysqlConnection.get().createStatement().execute(query);
+            return !_dbConnector.get().createStatement().execute(query);
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
@@ -38,4 +42,6 @@ public class MySqlPokemonAdder implements IDbPokemonAdder {
         );
         return query;
     }
+
+    private final IDbConnector _dbConnector;
 }

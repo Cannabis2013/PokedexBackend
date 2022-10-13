@@ -1,7 +1,7 @@
 package kea.pokedexbackend.Dbservices.CRUD.MySqlProvider.Remove;
 
 import kea.pokedexbackend.Db.CRUD.Remove.IDbPokemonRemover;
-import kea.pokedexbackend.Dbservices.Connectionbuilders.MysqlConnection;
+import kea.pokedexbackend.Db.Connector.IDbConnector;
 import kea.pokedexbackend.Dbservices.Connectionbuilders.DbConnectionException;
 import kea.pokedexbackend.models.CRUD.pokemon.Pokemon;
 import org.springframework.stereotype.Service;
@@ -10,6 +10,10 @@ import java.sql.SQLException;
 
 @Service
 public class MysqlPokemonRemover implements IDbPokemonRemover {
+    public MysqlPokemonRemover(IDbConnector dbConnector) {
+        _dbConnector = dbConnector;
+    }
+
     @Override
     public boolean remove(Pokemon pokemon) throws DbConnectionException {
         if(!pokemonExists(pokemon.id))
@@ -21,7 +25,7 @@ public class MysqlPokemonRemover implements IDbPokemonRemover {
                         WHERE id=%d
                     """,pokemon.id
             );
-            MysqlConnection.get().createStatement().execute(sql);
+            _dbConnector.get().createStatement().execute(sql);
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -31,7 +35,7 @@ public class MysqlPokemonRemover implements IDbPokemonRemover {
 
     private boolean pokemonExists(int id) throws DbConnectionException {
         try {
-            ResultSet dbResult = MysqlConnection.get()
+            ResultSet dbResult = _dbConnector.get()
                     .createStatement()
                     .executeQuery(
                             String.format(
@@ -55,4 +59,6 @@ public class MysqlPokemonRemover implements IDbPokemonRemover {
         }
         return false;
     }
+
+    private final IDbConnector _dbConnector;
 }
