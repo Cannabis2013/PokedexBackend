@@ -1,7 +1,7 @@
 package kea.pokedexbackend.Dbservices.MySqlProviders.CRUDProvider.Remove;
 
 import kea.pokedexbackend.Db.CRUD.Remove.IDbPokemonRemover;
-import kea.pokedexbackend.Db.Connector.IDbConnector;
+import kea.pokedexbackend.Db.Connector.IDbConnection;
 import kea.pokedexbackend.Dbservices.Connectors.DbConnectionException;
 import kea.pokedexbackend.models.CRUD.pokemon.Pokemon;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 @Service
 public class MysqlPokemonRemover implements IDbPokemonRemover {
-    public MysqlPokemonRemover(IDbConnector dbConnector) {
+    public MysqlPokemonRemover(IDbConnection dbConnector) {
         _dbConnector = dbConnector;
     }
 
@@ -60,5 +60,5 @@ public class MysqlPokemonRemover implements IDbPokemonRemover {
         return false;
     }
 
-    private final IDbConnector _dbConnector;
+    private final IDbConnection _dbConnector;
 }

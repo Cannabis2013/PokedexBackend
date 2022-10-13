@@ -1,6 +1,6 @@
 package kea.pokedexbackend.Dbservices.MySqlProviders.CountProvider.count;
 
-import kea.pokedexbackend.Db.Connector.IDbConnector;
+import kea.pokedexbackend.Db.Connector.IDbConnection;
 import kea.pokedexbackend.Dbservices.Connectors.DbConnectionException;
 import kea.pokedexbackend.Db.measurements.count.IDbPokemonCounter;
 import kea.pokedexbackend.models.Measurements.count.CountDetails;
@@ -12,7 +12,7 @@ import java.util.List;
 
 @Service
 public class MySqlPokemonCount implements IDbPokemonCounter {
-    public MySqlPokemonCount(IDbConnector dbConnector) {
+    public MySqlPokemonCount(IDbConnection dbConnector) {
         _dbConnector = dbConnector;
     }
 
@@ -34,5 +34,5 @@ public class MySqlPokemonCount implements IDbPokemonCounter {
         }
     }
 
-    private final IDbConnector _dbConnector;
+    private final IDbConnection _dbConnector;
 }

@@ -1,7 +1,7 @@
-package kea.pokedexbackend.Dbservices.MySqlProviders.CRUDProvider.Fetcher;
+package kea.pokedexbackend.Dbservices.MySqlProviders.CRUDProvider.Get;
 
 import kea.pokedexbackend.Db.CRUD.Get.IDbPokemonFetcher;
-import kea.pokedexbackend.Db.Connector.IDbConnector;
+import kea.pokedexbackend.Db.Connector.IDbConnection;
 import kea.pokedexbackend.Dbservices.MySqlProviders.CRUDProvider.Converter.ResultConverter;
 import kea.pokedexbackend.Dbservices.Connectors.DbConnectionException;
 import kea.pokedexbackend.models.CRUD.pokemon.Pokemon;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySqlPokemonFetch implements IDbPokemonFetcher {
-    public MySqlPokemonFetch(IDbConnector dbConnector) {
+    public MySqlPokemonFetch(IDbConnection dbConnector) {
         _dbConnector = dbConnector;
     }
 
@@ -37,5 +37,5 @@ public class MySqlPokemonFetch implements IDbPokemonFetcher {
         }
     }
 
-    private final IDbConnector _dbConnector;
+    private final IDbConnection _dbConnector;
 }

@@ -1,6 +1,6 @@
 package kea.pokedexbackend.Dbservices.MySqlProviders.CountProvider.average;
 
-import kea.pokedexbackend.Db.Connector.IDbConnector;
+import kea.pokedexbackend.Db.Connector.IDbConnection;
 import kea.pokedexbackend.Dbservices.Connectors.DbConnectionException;
 import kea.pokedexbackend.Db.measurements.average.IDbFastestAvgType;
 import org.springframework.stereotype.Service;
@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 @Service
 public class MySqlFastestPrimaryType implements IDbFastestAvgType {
-    public MySqlFastestPrimaryType(IDbConnector dbConnector) {
+    public MySqlFastestPrimaryType(IDbConnection dbConnector) {
         _dbConnector = dbConnector;
     }
 
@@ -34,5 +34,5 @@ public class MySqlFastestPrimaryType implements IDbFastestAvgType {
             """;
     }
 
-    private final IDbConnector _dbConnector;
+    private final IDbConnection _dbConnector;
 }

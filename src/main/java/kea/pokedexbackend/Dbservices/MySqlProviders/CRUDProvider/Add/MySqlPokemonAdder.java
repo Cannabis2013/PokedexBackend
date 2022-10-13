@@ -1,13 +1,13 @@
 package kea.pokedexbackend.Dbservices.MySqlProviders.CRUDProvider.Add;
 
 import kea.pokedexbackend.Db.CRUD.Add.IDbPokemonAdder;
-import kea.pokedexbackend.Db.Connector.IDbConnector;
+import kea.pokedexbackend.Db.Connector.IDbConnection;
 import kea.pokedexbackend.Dbservices.Connectors.DbConnectionException;
 import kea.pokedexbackend.models.CRUD.pokemon.Pokemon;
 import java.sql.SQLException;
 
 public class MySqlPokemonAdder implements IDbPokemonAdder {
-    public MySqlPokemonAdder(IDbConnector dbConnector) {
+    public MySqlPokemonAdder(IDbConnection dbConnector) {
         _dbConnector = dbConnector;
     }
 
@@ -43,5 +43,5 @@ public class MySqlPokemonAdder implements IDbPokemonAdder {
         return query;
     }
 
-    private final IDbConnector _dbConnector;
+    private final IDbConnection _dbConnector;
 }

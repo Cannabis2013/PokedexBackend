@@ -1,4 +1,4 @@
-package kea.pokedexbackend.Dbservices.MySqlProviders.CRUDProvider.Responses;
+package kea.pokedexbackend.Dbservices.Responses;
 
 import kea.pokedexbackend.Db.Responses.IStringResponse;
 import org.springframework.stereotype.Service;

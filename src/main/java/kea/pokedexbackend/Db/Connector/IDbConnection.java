@@ -4,6 +4,6 @@ import kea.pokedexbackend.Dbservices.Connectors.DbConnectionException;
 
 import java.sql.Connection;
 
-public interface IDbConnector {
+public interface IDbConnection {
     Connection get() throws DbConnectionException;
 }

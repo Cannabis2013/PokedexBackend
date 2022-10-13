@@ -1,6 +1,6 @@
 package kea.pokedexbackend.Dbservices.MySqlProviders.CountProvider.average;
 
-import kea.pokedexbackend.Db.Connector.IDbConnector;
+import kea.pokedexbackend.Db.Connector.IDbConnection;
 import kea.pokedexbackend.Dbservices.Connectors.DbConnectionException;
 import kea.pokedexbackend.Db.measurements.average.IDbAverageDefence;
 import org.springframework.stereotype.Service;
@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 @Service
 public class MySqlAverageDefence implements IDbAverageDefence {
-    public MySqlAverageDefence(IDbConnector dbConnector) {
+    public MySqlAverageDefence(IDbConnection dbConnector) {
         _dbConnector = dbConnector;
     }
 
@@ -28,5 +28,5 @@ public class MySqlAverageDefence implements IDbAverageDefence {
         return -1;
     }
 
-    private final IDbConnector _dbConnector;
+    private final IDbConnection _dbConnector;
 }
