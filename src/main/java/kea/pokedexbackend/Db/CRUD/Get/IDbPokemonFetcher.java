@@ -1,7 +1,7 @@
 package kea.pokedexbackend.Db.CRUD.Get;
 
 import kea.pokedexbackend.models.CRUD.pokemon.Pokemon;
-import kea.pokedexbackend.Dbservices.Connectionbuilders.DbConnectionException;
+import kea.pokedexbackend.Dbservices.MySql.Connectors.DbConnectionException;
 import java.util.List;
 
 public interface IDbPokemonFetcher {

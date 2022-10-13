@@ -1,6 +1,6 @@
 package kea.pokedexbackend.Controllers.CRUD;
 
-import kea.pokedexbackend.Dbservices.Connectionbuilders.DbConnectionException;
+import kea.pokedexbackend.Dbservices.MySql.Connectors.DbConnectionException;
 import kea.pokedexbackend.models.CRUD.pokemon.Pokemon;
 import kea.pokedexbackend.utils.json.Generic.JSerializer;
 import kea.pokedexbackend.utils.json.Pokemon.PokemonDeserializer;

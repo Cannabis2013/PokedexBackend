@@ -1,16 +1,15 @@
-package kea.pokedexbackend.Dbservices.Measurements.MySqlProvider.average;
+package kea.pokedexbackend.Dbservices.MySql.ServiceProviders.CountProvider.average;
 
 import kea.pokedexbackend.Db.Connector.IDbConnector;
-import kea.pokedexbackend.Dbservices.Connectionbuilders.DbConnectionException;
-import kea.pokedexbackend.Db.measurements.average.IDbAverageGrassHP;
+import kea.pokedexbackend.Dbservices.MySql.Connectors.DbConnectionException;
+import kea.pokedexbackend.Db.measurements.average.IDbAverageDefence;
 import org.springframework.stereotype.Service;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @Service
-public class MySqlAverageGrassHP implements IDbAverageGrassHP {
-    public MySqlAverageGrassHP(IDbConnector dbConnector) {
+public class MySqlAverageDefence implements IDbAverageDefence {
+    public MySqlAverageDefence(IDbConnector dbConnector) {
         _dbConnector = dbConnector;
     }
 
@@ -19,7 +18,7 @@ public class MySqlAverageGrassHP implements IDbAverageGrassHP {
         try {
             ResultSet dbResult = _dbConnector.get()
                     .createStatement().executeQuery("""
-                SELECT  AVG(hp) AS average FROM pokemon p WHERE p.primary_type = 'Grass';
+                SELECT AVG(defence) as average from pokemon p;
             """);
             if(dbResult.next())
                 return dbResult.getDouble("average");

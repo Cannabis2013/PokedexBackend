@@ -1,7 +1,7 @@
-package kea.pokedexbackend.Dbservices.Measurements.MySqlProvider.average;
+package kea.pokedexbackend.Dbservices.MySql.ServiceProviders.CountProvider.average;
 
 import kea.pokedexbackend.Db.Connector.IDbConnector;
-import kea.pokedexbackend.Dbservices.Connectionbuilders.DbConnectionException;
+import kea.pokedexbackend.Dbservices.MySql.Connectors.DbConnectionException;
 import kea.pokedexbackend.Db.measurements.average.IDbFastestAvgType;
 import org.springframework.stereotype.Service;
 import java.sql.SQLException;
@@ -15,19 +15,23 @@ public class MySqlFastestPrimaryType implements IDbFastestAvgType {
     @Override
     public String get() throws DbConnectionException {
         try {
-            var result = _dbConnector.get().createStatement().executeQuery("""
-                SELECT AVG(speed) as avg, primary_type type 
-                FROM pokemon p
-                GROUP BY primary_type
-                ORDER BY avg DESC
-                LIMIT 1;
-            """);
+            var result = _dbConnector.get().createStatement().executeQuery(query());
             if(result.next())
                 return result.getString("type");
         } catch (SQLException e) {
             return "";
         }
         return "";
+    }
+
+    private String query(){
+        return """
+                SELECT AVG(speed) as avg, primary_type type 
+                FROM pokemon p
+                GROUP BY primary_type
+                ORDER BY avg DESC
+                LIMIT 1;
+            """;
     }
 
     private final IDbConnector _dbConnector;

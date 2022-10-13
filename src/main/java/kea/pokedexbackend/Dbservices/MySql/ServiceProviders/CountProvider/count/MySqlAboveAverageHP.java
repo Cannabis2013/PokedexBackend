@@ -1,7 +1,7 @@
-package kea.pokedexbackend.Dbservices.Measurements.MySqlProvider.count;
+package kea.pokedexbackend.Dbservices.MySql.ServiceProviders.CountProvider.count;
 
 import kea.pokedexbackend.Db.Connector.IDbConnector;
-import kea.pokedexbackend.Dbservices.Connectionbuilders.DbConnectionException;
+import kea.pokedexbackend.Dbservices.MySql.Connectors.DbConnectionException;
 import kea.pokedexbackend.Db.measurements.count.IDbAboveAverageHP;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package kea.pokedexbackend.Dbservices.Measurements.MySqlProvider.count;
+package kea.pokedexbackend.Dbservices.MySql.ServiceProviders.CountProvider.count;
 
 import kea.pokedexbackend.models.Measurements.count.CountDetails;
 

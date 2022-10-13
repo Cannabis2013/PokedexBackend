@@ -1,13 +1,13 @@
-package kea.pokedexbackend.Dbservices.CRUD.MySqlProvider;
+package kea.pokedexbackend.Dbservices.MySql.ServiceProviders.CRUDProvider;
 
 import kea.pokedexbackend.Controllers.CRUD.ICRUDServices;
 import kea.pokedexbackend.Db.CRUD.Add.IDbPokemonAdder;
 import kea.pokedexbackend.Db.CRUD.Get.IDbPokemonFetcher;
 import kea.pokedexbackend.Db.CRUD.Remove.IDbPokemonRemover;
 import kea.pokedexbackend.Db.Connector.IDbConnector;
-import kea.pokedexbackend.Dbservices.CRUD.MySqlProvider.Add.MySqlPokemonAdder;
-import kea.pokedexbackend.Dbservices.CRUD.MySqlProvider.Fetcher.MySqlPokemonFetch;
-import kea.pokedexbackend.Dbservices.CRUD.MySqlProvider.Remove.MysqlPokemonRemover;
+import kea.pokedexbackend.Dbservices.MySql.ServiceProviders.CRUDProvider.Add.MySqlPokemonAdder;
+import kea.pokedexbackend.Dbservices.MySql.ServiceProviders.CRUDProvider.Fetcher.MySqlPokemonFetch;
+import kea.pokedexbackend.Dbservices.MySql.ServiceProviders.CRUDProvider.Remove.MysqlPokemonRemover;
 import org.springframework.stereotype.Service;
 
 @Service

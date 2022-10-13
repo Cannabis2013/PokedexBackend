@@ -1,9 +1,9 @@
-package kea.pokedexbackend.Dbservices.CRUD.MySqlProvider.Fetcher;
+package kea.pokedexbackend.Dbservices.MySql.ServiceProviders.CRUDProvider.Fetcher;
 
 import kea.pokedexbackend.Db.CRUD.Get.IDbPokemonFetcher;
 import kea.pokedexbackend.Db.Connector.IDbConnector;
-import kea.pokedexbackend.Dbservices.CRUD.MySqlProvider.Converter.ResultConverter;
-import kea.pokedexbackend.Dbservices.Connectionbuilders.DbConnectionException;
+import kea.pokedexbackend.Dbservices.MySql.ServiceProviders.CRUDProvider.Converter.ResultConverter;
+import kea.pokedexbackend.Dbservices.MySql.Connectors.DbConnectionException;
 import kea.pokedexbackend.models.CRUD.pokemon.Pokemon;
 import java.sql.SQLException;
 import java.util.ArrayList;
