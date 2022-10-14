@@ -1,6 +1,7 @@
 package kea.pokedexbackend.Controllers;
 
-import kea.pokedexbackend.Contracts.CRUD.ServiceProviders.ICRUDServices;
+import com.fasterxml.jackson.databind.annotation.JsonAppend;
+import kea.pokedexbackend.Contracts.Db.CRUD.ICRUDServices;
 import kea.pokedexbackend.models.CRUD.pokemon.Pokemon;
 import kea.pokedexbackend.utils.json.Generic.JSerializer;
 import kea.pokedexbackend.utils.json.Pokemon.PokemonDeserializer;
@@ -17,35 +18,30 @@ public class PokemonCRUD {
 
     @GetMapping("/getAll")
     public String get(){
-        List<Pokemon> pokemons = _services.fetcher().fetch();
-        var jsonResult = JSerializer.serialize(pokemons);
-        return jsonResult;
+        var pokemons = _services.fetcher().fetch();
+        return JSerializer.serialize(pokemons);
     }
 
     @GetMapping("/getByName")
     public String getOne(@RequestHeader String name){
         var pokemon = _services.fetcher().fetch(name);
-        var jsonResult = JSerializer.serialize(pokemon);
-        return jsonResult;
+        return JSerializer.serialize(pokemon);
     }
 
     @GetMapping("addPokemon")
-    public String AddPokemon(@RequestBody String json){
-        var pokemon = PokemonDeserializer.deserialize(json);
+    public String AddPokemon(@RequestBody @ModelAttribute Pokemon pokemon){
         var result = _services.adder().Add(pokemon);
         return _services.resultResponse().response(result);
     }
 
     @PostMapping("removePokemon")
-    public String removePokemon(@RequestBody String json){
-        var pokemon = PokemonDeserializer.deserialize(json);
+    public String removePokemon(@ModelAttribute Pokemon pokemon){
         var result = _services.remover().remove(pokemon);
         return _services.resultResponse().response(result);
     }
 
     @PatchMapping("UpdatePokemon")
-    public String updatePokemon(@RequestBody String json){
-        var pokemon = PokemonDeserializer.deserialize(json);
+    public String updatePokemon(@ModelAttribute Pokemon pokemon){
         var removeResult = _services.remover().remove(pokemon);
         var result = removeResult ? _services.adder().Add(pokemon)  : false;
         return _services.resultResponse().response(result);

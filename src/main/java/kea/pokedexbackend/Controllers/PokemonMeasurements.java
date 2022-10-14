@@ -1,6 +1,6 @@
 package kea.pokedexbackend.Controllers;
 
-import kea.pokedexbackend.Contracts.measurements.ServiceProviders.IPokemonMeasureServices;
+import kea.pokedexbackend.Contracts.Db.measurements.ServiceProviders.IPokemonMeasureServices;
 import kea.pokedexbackend.utils.json.Generic.JSerializer;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
